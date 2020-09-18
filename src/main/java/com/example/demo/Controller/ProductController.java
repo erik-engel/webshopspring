@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ProductController {
-    
-    private ProductService ps;
 
+    private ProductService ps;
+    /*
     @Autowired(required = true)
     @Qualifier(value = "productService")
     public ProductController(ProductService productService) {
         this.ps = productService;
     }
-
+*/
     @GetMapping("/opretProduct")
     public String createFormProduct(Model model) {
         model.addAttribute("product",new Product());
