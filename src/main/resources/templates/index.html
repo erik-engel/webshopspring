@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Startside</title>
 </head>
 <body>
+<table class="table table-striped">
 
-<h1>FUCKING KÆLLING</h1>
+    <h1>Vareliste</h1>
+    <tr>
+        <th>Varenavn</th>
+        <th>Pris</th>
+        <th>Beskrivelse</th>
+        <th>opdate</th>
+        <th>slet</th>
+
+
+    </tr>
+
+    <tr th:each="product : ${products}">
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.description}"></td>
+
+        <td><a th:href="@{/opdaterProduct/{id}(id=${product.id})}"><button>Opdater</button></a></td>
+        <td><a th:href="@{/sletProduct/{id}(id=${product.id})}"><button>slet</button></a></td>
+    </tr>
+</table>
+
+<a href="/opretProduct">Opret bestilling</a>
 
 </body>
 </html>

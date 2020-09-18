@@ -2,10 +2,12 @@ package com.example.demo.Service;
 
 import com.example.demo.Model.Product;
 import com.example.demo.Repository.ProductRepositoryI;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class ProductService {
+
     private ProductRepositoryI productRepositoryI;
 
     public ProductService(ProductRepositoryI productRepositoryI){
