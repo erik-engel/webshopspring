@@ -5,7 +5,8 @@ import javax.persistence.*;
 @Entity
 @Table(name="PRODUCTS")
 public class Product {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name="id")
     private Integer id;
     @Column(name="name")

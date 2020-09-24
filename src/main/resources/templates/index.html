@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Startside</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 </head>
 <body>
-<table class="table table-striped">
 
-    <h1>Vareliste</h1>
-    <tr>
-        <th>Varenavn</th>
-        <th>Pris</th>
-        <th>Beskrivelse</th>
-        <th>opdate</th>
-        <th>slet</th>
+<div class="container">
+    <table class="table table-striped">
+
+        <h1>Vareliste</h1>
+        <tr>
+            <th>Varenavn</th>
+            <th>Pris</th>
+            <th>Beskrivelse</th>
+            <th>opdate</th>
+            <th>slet</th>
 
 
-    </tr>
+        </tr>
 
-    <tr th:each="product : ${products}">
-        <td th:text="${product.name}"></td>
-        <td th:text="${product.price}"></td>
-        <td th:text="${product.description}"></td>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.description}"></td>
 
-        <td><a th:href="@{/opdaterProduct/{id}(id=${product.id})}"><button>Opdater</button></a></td>
-        <td><a th:href="@{/sletProduct/{id}(id=${product.id})}"><button>slet</button></a></td>
-    </tr>
-</table>
+            <td ><a th:href="@{/opdaterProduct/{id}(id=${product.id})}"><button>Opdater</button></a></td>
+            <td ><a th:href="@{/sletProduct/{id}(id=${product.id})}"><button>slet</button></a></td>
+        </tr>
+    </table>
 
-<a href="/opretProduct">Opret bestilling</a>
+    <a class="btn btn-primary" href="/opretProduct">Opret bestilling</a>
+</div>
 
 </body>
 </html>
